@@ -1,33 +1,30 @@
 // Noel Caceres
 // 3/27/2018
-// Codewars - Complementary DNA
+// Codewars - You are a square
 
 /*
-Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells 
-and carries the "instructions" for the development and functioning of 
-living organisms.
+A square of squares
 
-If you want to know more http://en.wikipedia.org/wiki/DNA
+You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
 
-In DNA strings, symbols "A" and "T" are complements of each other, 
-as "C" and "G". You have function with one side of the DNA (string, 
-except for Haskell); you need to get the other complementary side. 
-DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+However, sometimes, you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+Task
 
-Examples:
-DNAStrand ("ATTGC") # return "TAACG"
-DNAStrand ("GTAT") # return "CATA"
+Given an integral number, determine if it's a square number:
+
+    In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+
+The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+Examples
+
+isSquare(-1) // => false
+isSquare( 3) // => false
+isSquare( 4) // => true
+isSquare(25) // => true
+isSquare(26) // => false
 */
 
-// Function: DNAStrand
-function DNAStrand(dna){
-	result = "";
-	for (var i=0; i<dna.length; i++) {
-		if (dna[i] === 'A') result += 'T';
-	    else if (dna[i] === 'A') result += 'T';
-	    else if (dna[i] === 'T') result += 'A';
-	    else if (dna[i] === 'G') result += 'C';
-	    else if (dna[i] === 'C') result += 'G';
-  }
-  return result;
+// Function: isSquare
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
 }
