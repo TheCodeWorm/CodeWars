@@ -17,7 +17,6 @@ DNA strand is never empty or there is no DNA at all (again, except for Haskell).
 Examples:
 DNAStrand ("ATTGC") # return "TAACG"
 DNAStrand ("GTAT") # return "CATA"
-*/
 
 // Function: DNAStrand
 function DNAStrand(dna){
@@ -30,4 +29,13 @@ function DNAStrand(dna){
 	    else if (dna[i] === 'C') result += 'G';
   }
   return result;
+}
+*/
+
+// Function: DNAStrand
+// using map, arrow functions, split, join
+var pairs = {'A':'T','T':'A','C':'G','G':'C'};
+
+DNAStrand = (dna) => {
+  return dna.split('').map((v) => { return pairs[v] }).join('');
 }
