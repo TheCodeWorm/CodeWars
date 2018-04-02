@@ -16,7 +16,6 @@ maskify(                "") ==                 ""
 // "What was the name of your first pet?"
 maskify("Skippy")                                   == "##ippy"
 maskify("Nananananananananananananananana Batman!") == "####################################man!"
-*/
 
 // FUNCTION: Maskify
 function maskify(cc) {
@@ -29,4 +28,10 @@ function maskify(cc) {
     else str += '#';
   }
   return str;
+}
+*/
+
+// FUNCTION: Maskify
+maskify = (cc) => {
+  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
 }
